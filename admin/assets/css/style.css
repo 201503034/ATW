@@ -3196,7 +3196,7 @@ input[type="checkbox"] {
 }
 select,
 input[type="file"] {
-  height: 40px !important;
+  height: 34px !important;
   line-height: 30px;
 }
 select {

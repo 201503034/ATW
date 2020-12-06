@@ -7,6 +7,9 @@
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.2.19
 
+CREATE DATABASE crm;
+USE crm;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -155,6 +158,26 @@ INSERT INTO `user` (`id`, `name`, `email`, `alt_email`, `password`, `mobile`, `g
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `authentication`
+--
+
+CREATE TABLE `authentication` (
+  `id` int(11) NOT NULL,
+  `email_id` varchar(300) NOT NULL,
+  `secret` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `authentication`
+--
+
+INSERT INTO `authentication` (`id`, `email_id`, `secret`) VALUES
+(1, 'anuj.lpu1@gmail.com', 'XVQ2UIGO75XRUKJO');
+-- --------------------------------------------------------
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `usercheck`
 --
 
@@ -227,6 +250,13 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `authentication`
+--
+ALTER TABLE `authentication`
+  ADD PRIMARY KEY (`id`);
+
+
+--
 -- Indexes for table `usercheck`
 --
 ALTER TABLE `usercheck`
@@ -259,6 +289,13 @@ ALTER TABLE `ticket`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `authentication`
+--
+ALTER TABLE `authentication`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 
 --
 -- AUTO_INCREMENT for table `usercheck`
